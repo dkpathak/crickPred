@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="com.dk.crickprediction.features.main.MainViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".features.main.MainActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+
+            android:id="@+id/scoreTv"
+            style="@style/TextViewNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/score" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/overTv"
+            style="@style/TextViewNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scoreTv"
+            android:text="@string/Over" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/runTv"
+            style="@style/TextViewBig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/run" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/runLableTv"
+            style="@style/TextViewNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/runTv"
+            app:layout_constraintRight_toRightOf="@id/runTv"
+            app:layout_constraintTop_toBottomOf="@id/runTv"
+            android:text="@string/runLable" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/overStateTv"
+            style="@style/TextViewNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:scrollHorizontally="true"
+            app:layout_constraintBottom_toTopOf="@id/pitchLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pitchLayout"
+            android:layout_width="250dp"
+            android:layout_height="350dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/batsman1Tv"
+                    style="@style/TextViewNormal"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/player1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/gameOver"
+                    style="@style/TextViewNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                     />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/batsman2Tv"
+                    style="@style/TextViewNormal"
+                    android:layout_marginBottom="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:text="@string/player2" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bowlBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="Ball"
+            android:onClick="@{(v)->mainViewModel.onBowlClicked()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pitchLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

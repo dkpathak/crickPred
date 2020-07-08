@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CrickPrediction</string>
+    <string name="run">0</string>
+    <string name="runLable">Run</string>
+    <string name="score">Score : 0 - 0</string>
+    <string name="Over">Over :0</string>
+    <string name="player1">Player (3)*</string>
+    <string name="player2">Player (5)</string>
+
+</resources>
